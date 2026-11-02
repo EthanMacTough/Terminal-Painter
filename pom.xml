@@ -1,0 +1,57 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <!-- 1. POM Model Version -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 2. Project Coordinates (GAV) -->
+    <groupId>ethanmactough</groupId>
+    <artifactId>in-terminal-painter</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+
+    <!-- 3. Reusable Properties -->
+    <properties>
+        <maven.compiler.release>21</maven.compiler.release>
+        <maven.compiler.target>21</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jackson.version>2.15.2</jackson.version>
+    </properties>
+
+    <!-- 4. External Dependencies -->
+    <dependencies>
+        <dependency>
+            <groupId>com.googlecode.lanterna</groupId>
+            <artifactId>lanterna</artifactId>
+            <version>3.1.2</version>
+        </dependency>
+        
+        <!-- Example Test Dependency -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- 5. Build and Plugin Configurations -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.5.0</version>
+                <configuration>
+                    <mainClass>Main</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
